@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main # Or your default branch name
+  name: github
+  repo: ammarali36t/zinova-web # Replace with your GitHub username/repository
+  branch: main
 
 media_folder: "assets/uploads" # Where uploaded images will be saved
 public_folder: "/assets/uploads" # How images are referenced in code
