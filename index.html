@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zinova Healthcare – Innovation in Every Dose</title>
-  
+  <title>Zinova Healthcare – Quality & Innovation in Every Dose</title>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/zinova-mark.png">
   <link rel="shortcut icon" type="image/png" href="assets/zinova-mark.png">
-  
+
   <link rel="stylesheet" href="assets/zinova.css">
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Top Announcement Bar -->
+  <div class="zh-topbar">
+    <div class="zh-container zh-topbar__flex">
+      <span>cGMP & ISO Certified Pharmaceutical Manufacturer & Supplier</span>
+      <div class="zh-topbar__contact">
+        <span>📧 info@zinovahealthcare.com</span>
+        <span>📞 +92 300 1234567</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Header -->
   <header class="zh-header">
     <div class="zh-container zh-header__main">
       <a href="/" class="zh-logo">
@@ -21,238 +32,159 @@
         <span class="zh-logo__tagline">Innovation in Every Dose</span>
       </a>
 
-      <div class="zh-search">
-        <input type="text" placeholder="Search medicines, brands, categories..." class="zh-search__input">
-        <button class="zh-search__btn" aria-label="Search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </button>
-      </div>
-
-      <div class="zh-header__actions">
-        <a href="#" class="zh-action-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <span>Account</span>
-        </a>
-        <a href="#" class="zh-action-item zh-cart">
-          <div class="zh-cart__icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-            <span class="zh-cart__badge">1</span>
-          </div>
-          <span>Cart</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="zh-nav">
-      <div class="zh-container">
+      <nav class="zh-nav">
         <ul class="zh-nav__list">
           <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#divisions">Divisions</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#quality">Quality Assurance</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+
+      <a href="#contact" class="zh-btn zh-btn--primary">Inquire Now</a>
+    </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="zh-hero">
-      <div class="zh-container zh-hero__grid">
-        <div class="zh-hero__text">
-          <h1>Trusted Healthcare,<br><span class="highlight">Delivered With Care.</span></h1>
-          <p>Genuine healthcare products from Zinova, making quality healthcare more accessible and convenient.</p>
-          <div class="zh-hero__buttons">
-            <a href="#popular-products" class="zh-btn zh-btn--primary">Shop All &rarr;</a>
-            <a href="#categories" class="zh-btn zh-btn--outline">Explore Products</a>
+    <!-- Hero Slider Banner -->
+    <section class="zh-hero-corporate">
+      <div class="zh-container zh-hero-corporate__grid">
+        <div class="zh-hero-corporate__text">
+          <span class="zh-badge">Global Healthcare Solutions</span>
+          <h1>Advancing Health Through Quality Pharmaceuticals</h1>
+          <p>Zinova Healthcare is dedicated to manufacturing, formulating, and distributing high-quality therapeutic and wellness products globally.</p>
+          <div class="zh-hero-corporate__buttons">
+            <a href="#products" class="zh-btn zh-btn--primary">Our Product Range &rarr;</a>
+            <a href="#about" class="zh-btn zh-btn--outline">Learn More</a>
           </div>
         </div>
-        <div class="zh-hero__media">
-          <div class="zh-hero__card">
-            <img src="assets/zinova-hero.jpg" alt="Zinova Healthcare Products">
-          </div>
+        <div class="zh-hero-corporate__image">
+          <img src="assets/zinova-hero.jpg" alt="Zinova Healthcare Facility & Products">
         </div>
       </div>
     </section>
 
-    <!-- Shop by Category -->
-    <section id="categories" class="zh-section">
+    <!-- Company Overview / About -->
+    <section id="about" class="zh-section">
       <div class="zh-container">
-        <h2 class="zh-section-title">Shop by Category</h2>
-        <div class="zh-categories-grid">
-          <div class="zh-category-card">
-            <div class="zh-category-card__img"><img src="assets/zinova-mark.png" alt="Medicines"></div>
-            <h3>Medicines</h3>
-            <a href="#" class="zh-link">Shop now &rarr;</a>
-          </div>
-          <div class="zh-category-card">
-            <div class="zh-category-card__img"><img src="assets/zinova-mark.png" alt="Medical Devices"></div>
-            <h3>Medical Devices</h3>
-            <a href="#" class="zh-link">Shop now &rarr;</a>
-          </div>
-          <div class="zh-category-card">
-            <div class="zh-category-card__img"><img src="assets/zinova-mark.png" alt="Vitamins & Supplements"></div>
-            <h3>Vitamins & Supplements</h3>
-            <a href="#" class="zh-link">Shop now &rarr;</a>
-          </div>
-          <div class="zh-category-card">
-            <div class="zh-category-card__img"><img src="assets/zinova-mark.png" alt="Personal Care"></div>
-            <h3>Personal Care</h3>
-            <a href="#" class="zh-link">Shop now &rarr;</a>
-          </div>
-          <div class="zh-category-card">
-            <div class="zh-category-card__img"><img src="assets/zinova-mark.png" alt="Baby Care"></div>
-            <h3>Baby Care</h3>
-            <a href="#" class="zh-link">Shop now &rarr;</a>
-          </div>
-          <div class="zh-category-card">
-            <div class="zh-category-card__img"><img src="assets/zinova-mark.png" alt="First Aid"></div>
-            <h3>First Aid</h3>
-            <a href="#" class="zh-link">Shop now &rarr;</a>
+        <div class="zh-about-grid">
+          <div class="zh-about-text">
+            <h2 class="zh-section-title">About Zinova Healthcare</h2>
+            <p>At Zinova Healthcare, we focus on delivering safe, effective, and affordable pharmaceutical products. Our state-of-the-art facilities comply with international quality standards, serving healthcare professionals, hospitals, and pharmacies worldwide.</p>
+            
+            <div class="zh-stats-row">
+              <div class="zh-stat-card">
+                <h3>100+</h3>
+                <p>Formulations</p>
+              </div>
+              <div class="zh-stat-card">
+                <h3>15+</h3>
+                <p>Global Markets</p>
+              </div>
+              <div class="zh-stat-card">
+                <h3>100%</h3>
+                <p>Quality Compliant</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Popular Products -->
-    <section id="popular-products" class="zh-section zh-section--gray">
+    <!-- Key Business Divisions -->
+    <section id="divisions" class="zh-section zh-section--gray">
+      <div class="zh-container">
+        <h2 class="zh-section-title zh-text-center">Our Core Divisions</h2>
+        <div class="zh-divisions-grid">
+          <div class="zh-division-card">
+            <div class="zh-division-icon">🔬</div>
+            <h3>Pharmaceutical Manufacturing</h3>
+            <p>High-standard formulation and packaging of solid oral dosages, liquids, and topical solutions.</p>
+          </div>
+          <div class="zh-division-card">
+            <div class="zh-division-icon">💊</div>
+            <h3>Nutraceuticals & Wellness</h3>
+            <p>Premium dietary supplements, multivitamins, and preventive health formulations.</p>
+          </div>
+          <div class="zh-division-card">
+            <div class="zh-division-icon">🌐</div>
+            <h3>Global Export & Distribution</h3>
+            <p>Seamless international logistics and distribution network reaching multiple regions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Showcase -->
+    <section id="products" class="zh-section">
       <div class="zh-container">
         <div class="zh-section-header">
-          <h2 class="zh-section-title">Popular Products</h2>
-          <a href="#" class="zh-link">View all products &rarr;</a>
+          <h2 class="zh-section-title">Featured Formulations</h2>
+          <a href="#" class="zh-link">Download Product Catalog (PDF) &rarr;</a>
         </div>
         <div class="zh-products-grid">
           <div class="zh-product-card">
-            <button class="zh-wishlist-btn" aria-label="Add to Wishlist">♡</button>
             <div class="zh-product-card__img"><img src="assets/zinova-mark.png" alt="Hyacol"></div>
-            <h4>Hyacol</h4>
+            <h4>Hyacol Syrup / Tablets</h4>
+            <span class="zh-product-cat">Therapeutic Category</span>
           </div>
           <div class="zh-product-card">
-            <button class="zh-wishlist-btn" aria-label="Add to Wishlist">♡</button>
             <div class="zh-product-card__img"><img src="assets/zinova-mark.png" alt="DD3 K2"></div>
-            <h4>DD3 K2</h4>
+            <h4>DD3 K2 Softgels</h4>
+            <span class="zh-product-cat">Nutraceutical</span>
           </div>
           <div class="zh-product-card">
-            <button class="zh-wishlist-btn" aria-label="Add to Wishlist">♡</button>
             <div class="zh-product-card__img"><img src="assets/zinova-mark.png" alt="Afferi"></div>
-            <h4>Afferi</h4>
+            <h4>Afferi Suspension</h4>
+            <span class="zh-product-cat">Pediatric Care</span>
           </div>
           <div class="zh-product-card">
-            <button class="zh-wishlist-btn" aria-label="Add to Wishlist">♡</button>
             <div class="zh-product-card__img"><img src="assets/zinova-mark.png" alt="Quacid"></div>
-            <h4>Quacid</h4>
-          </div>
-          <div class="zh-product-card">
-            <button class="zh-wishlist-btn" aria-label="Add to Wishlist">♡</button>
-            <div class="zh-product-card__img"><img src="assets/zinova-mark.png" alt="LeVive"></div>
-            <h4>LeVive</h4>
+            <h4>Quacid Tablets</h4>
+            <span class="zh-product-cat">Gastrointestinal</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Zinova? -->
-    <section class="zh-section">
+    <!-- Quality Standards -->
+    <section id="quality" class="zh-section zh-section--blue">
+      <div class="zh-container zh-text-center">
+        <h2>Uncompromised Quality & Compliance</h2>
+        <p>Every batch produced under Zinova Healthcare undergoes rigorous quality control tests in certified laboratories.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="zh-section">
       <div class="zh-container">
-        <h2 class="zh-section-title zh-text-center">Why Choose Zinova?</h2>
-        <div class="zh-features-row">
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">🛡️</div>
-            <p>Quality-Assured Products</p>
-          </div>
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">🎖️</div>
-            <p>Trusted Pharmaceutical Brand</p>
-          </div>
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">📦</div>
-            <p>Secure Packaging</p>
-          </div>
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">🚚</div>
-            <p>Reliable Delivery</p>
-          </div>
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">🔒</div>
-            <p>Secure Payments</p>
-          </div>
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">💳</div>
-            <p>Multiple Pay Methods</p>
-          </div>
-          <div class="zh-feature-item">
-            <div class="zh-feature-icon">🎧</div>
-            <p>Dedicated Customer Support</p>
-          </div>
-        </div>
-
-        <!-- Services Cards -->
-        <div class="zh-services-grid">
-          <div class="zh-service-card zh-service-card--blue">
-            <h3>Prescription Medicines</h3>
-            <p>Upload your prescription and we'll take care of the rest.</p>
-            <button class="zh-btn zh-btn--primary">Upload Prescription</button>
-          </div>
-          <div class="zh-service-card zh-service-card--yellow">
-            <h3>Talk to a Pharmacist</h3>
-            <p>Unsure about a medicine or a dose? Our team can help.</p>
-            <a href="#" class="zh-link">Ask a question &rarr;</a>
-          </div>
-          <div class="zh-service-card zh-service-card--green">
-            <h3>Healthcare Guide</h3>
-            <p>Expert tips and advice for a healthier you.</p>
-            <a href="#" class="zh-link">Read Articles &rarr;</a>
-          </div>
-          <div class="zh-service-card zh-service-card--gray">
-            <h3>Reorder in Seconds</h3>
-            <p>Your past orders are saved to your account.</p>
-            <a href="#" class="zh-link">View past orders &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bottom Blue Value Banner -->
-    <section class="zh-value-banner">
-      <div class="zh-container zh-value-banner__grid">
-        <div class="zh-value-item">
-          <div class="zh-value-icon">🚚</div>
-          <div>
-            <strong>Free Delivery</strong>
-            <span>On orders above $50</span>
-          </div>
-        </div>
-        <div class="zh-value-item">
-          <div class="zh-value-icon">🔄</div>
-          <div>
-            <strong>7 Days Return</strong>
-            <span>Easy returns</span>
-          </div>
-        </div>
-        <div class="zh-value-item">
-          <div class="zh-value-icon">🛡️</div>
-          <div>
-            <strong>100% Genuine Medicines</strong>
-            <span>Quality Assured</span>
-          </div>
-        </div>
-        <div class="zh-value-item">
-          <div class="zh-value-icon">🔒</div>
-          <div>
-            <strong>Secure Payments</strong>
-            <span>Multiple payment options</span>
-          </div>
-        </div>
-        <div class="zh-value-item">
-          <div class="zh-value-icon">🎧</div>
-          <div>
-            <strong>24/7 Support</strong>
-            <span>We're here to help</span>
-          </div>
+        <h2 class="zh-section-title zh-text-center">Get in Touch With Us</h2>
+        <div class="zh-contact-wrapper">
+          <form class="zh-contact-form" action="#" method="POST">
+            <div class="zh-form-group">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="zh-form-group">
+              <input type="text" placeholder="Phone Number">
+              <input type="text" placeholder="Subject">
+            </div>
+            <textarea placeholder="Your Inquiry or Message..." rows="5" required></textarea>
+            <button type="submit" class="zh-btn zh-btn--primary">Send Inquiry</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="zh-footer">
+    <div class="zh-container zh-footer__bottom">
+      <p>&copy; 2026 Zinova Healthcare. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
