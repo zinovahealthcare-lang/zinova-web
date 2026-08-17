@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: zinovahealthcare-lang/zinova-web 
+  repo: zinovahealthcare-lang/zinova-web # Replace with your exact GitHub username/repo
   branch: main
+  base_url: https://decap-cms-oauth-provider.vercel.app
+  auth_endpoint: /auth
 
 media_folder: "assets/uploads" # Where uploaded images will be saved
 public_folder: "/assets/uploads" # How images are referenced in code
