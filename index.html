@@ -3,154 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zinova Healthcare</title>
+  <title>Zinova Healthcare – Innovation in Every Dose</title>
   <link rel="stylesheet" href="assets/zinova.css">
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <p>Free Express Shipping on Orders Over $50 | 100% Guaranteed Authentic Healthcare Products</p>
-    </div>
-  </div>
+  <!-- Header Section -->
+  <header class="zh-header">
+    <div class="zh-container zh-header__main">
+      <a href="/" class="zh-logo">
+        <img src="assets/zinova-logo.png" alt="Zinova Healthcare Logo">
+        <span class="zh-logo__tagline">Innovation in Every Dose</span>
+      </a>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-wrapper">
-      <div class="logo">
-        <a href="/">
-          <img src="assets/zinova-logo.png" alt="Zinova Healthcare Logo">
+      <div class="zh-search">
+        <input type="text" placeholder="Search medicines, brands, categories..." class="zh-search__input">
+        <button class="zh-search__btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </div>
+
+      <div class="zh-header__actions">
+        <a href="#" class="zh-action-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Account</span>
+        </a>
+        <a href="#" class="zh-action-item zh-cart">
+          <div class="zh-cart__icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span class="zh-cart__badge">1</span>
+          </div>
+          <span>Cart</span>
         </a>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">About Us</a></li>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="zh-nav">
+      <div class="zh-container">
+        <ul class="zh-nav__list">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Catalog</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-      </nav>
-      <div class="header-actions">
-        <a href="#" class="icon-link" aria-label="Search">🔍</a>
-        <a href="#" class="icon-link" aria-label="Account">👤</a>
-        <a href="#" class="icon-link cart-icon" aria-label="Cart">🛒 <span class="cart-count">0</span></a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main id="MainContent">
+  <main>
     <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('assets/zinova-hero.jpg');">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Your Trusted Partner in Healthcare & Wellness</h1>
-          <p>Discover premium healthcare essential products curated for your wellbeing.</p>
-          <a href="#products" class="btn btn-primary">Shop Now</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Value Badges / Features -->
-    <section class="values-section">
-      <div class="container values-grid">
-        <div class="value-card">
-          <div class="value-icon">🩺</div>
-          <h3>Certified Quality</h3>
-          <p>All products are lab tested and health-authority approved.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">🚚</div>
-          <h3>Fast Delivery</h3>
-          <p>Express dispatch directly to your doorstep.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">🔒</div>
-          <h3>Secure Shopping</h3>
-          <p>100% encrypted payment checkout safety.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">💬</div>
-          <h3>24/7 Support</h3>
-          <p>Dedicated medical product specialists ready to help.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products-section">
-      <div class="container">
-        <h2 class="section-title">Featured Healthcare Products</h2>
-        <div class="products-grid">
-          
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/zinova-mark.png" alt="Zinova Wellness Product">
-            </div>
-            <div class="product-info">
-              <h3>Zinova Daily Wellness Pack</h3>
-              <p class="product-price">$29.99</p>
-              <button class="btn btn-secondary">Add to Cart</button>
-            </div>
+    <section class="zh-hero">
+      <div class="zh-container zh-hero__grid">
+        <div class="zh-hero__text">
+          <h1>Trusted Healthcare,<br><span class="highlight">Delivered With Care.</span></h1>
+          <p>Genuine healthcare products from Zinova, making quality healthcare more accessible and convenient.</p>
+          <div class="zh-hero__buttons">
+            <a href="#" class="zh-btn zh-btn--primary">Shop All &rarr;</a>
+            <a href="#" class="zh-btn zh-btn--outline">Explore Products</a>
           </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/zinova-mark.png" alt="Zinova Essential Care">
-            </div>
-            <div class="product-info">
-              <h3>Essential Health Monitor Kit</h3>
-              <p class="product-price">$49.99</p>
-              <button class="btn btn-secondary">Add to Cart</button>
-            </div>
+        </div>
+        <div class="zh-hero__media">
+          <div class="zh-hero__card">
+            <img src="assets/zinova-hero.jpg" alt="Zinova Healthcare Products">
           </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <img src="assets/zinova-mark.png" alt="Zinova First Aid Kit">
-            </div>
-            <div class="product-info">
-              <h3>Advanced Personal Care Set</h3>
-              <p class="product-price">$34.99</p>
-              <button class="btn btn-secondary">Add to Cart</button>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <img src="assets/zinova-logo.png" alt="Zinova Logo" class="footer-logo">
-        <p>Providing quality health products for better daily living.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Shop All</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p>Subscribe for health updates and promotional offers.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault();">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Zinova Healthcare. All rights reserved.</p>
-    </div>
-  </footer>
 
 </body>
 </html>
