@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # Or your default branch name
+
+media_folder: "assets/uploads" # Where uploaded images will be saved
+public_folder: "/assets/uploads" # How images are referenced in code
+
+collections:
+  - name: "pages"
+    label: "Site Pages"
+    files:
+      - file: "index.html"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Who We Are Text", name: "who_we_are", widget: "markdown" }
+          - { label: "What We Do Text", name: "what_we_do", widget: "markdown" }
+
+      - file: "contact.html"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string" }
