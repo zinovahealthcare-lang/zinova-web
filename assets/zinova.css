@@ -206,3 +206,144 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
     font-size: 26px;
   }
 }
+
+/* ==========================================================================
+   Contact Section & Floating WhatsApp
+   ========================================================================== */
+
+/* Contact Layout Grid */
+.zh-contact-section {
+  background-color: #f9fafb;
+  padding: 60px 0;
+}
+
+.zh-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Info Column */
+.zh-contact-info h2,
+.zh-contact-form-wrapper h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark, #1f2937);
+  margin-bottom: 24px;
+}
+
+.zh-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zh-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #a21c4b; /* Matching pink tone from screenshot */
+}
+
+.zh-info-list a {
+  color: #a21c4b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.zh-info-list a:hover {
+  text-decoration: underline;
+}
+
+.zh-map-wrapper {
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Contact Form Styling */
+.zh-contact-form-wrapper {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.zh-form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.zh-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.zh-form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1f2937;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.zh-form-group input:focus {
+  border-color: #0b6cb1;
+  background-color: #ffffff;
+}
+
+.zh-form-group small {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.zh-btn--full {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Floating WhatsApp Button (Fixed Bottom Left) */
+.zh-whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  z-index: 9999;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.zh-whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .zh-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
