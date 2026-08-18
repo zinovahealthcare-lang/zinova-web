@@ -146,3 +146,97 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
   .zh-about-block h2 { font-size: 26px; }
   .zh-nav__list { display: none; }
 }
+
+/* ==========================================================================
+   Executive Profile Card & CEO Header Styling
+   ========================================================================== */
+
+/* CEO Eyebrow Kicker above Who We Are */
+.zh-ceo-kicker {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  background-color: #e0f2fe;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* Executive Card Container */
+.zh-executive-card {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-blue);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zh-executive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(11, 108, 177, 0.12);
+}
+
+.zh-executive-card__badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(8, 76, 125, 0.88);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.zh-executive-card__image {
+  width: 100%;
+  height: 320px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+}
+
+.zh-executive-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.zh-executive-card:hover .zh-executive-card__image img {
+  transform: scale(1.03);
+}
+
+.zh-executive-card__footer {
+  padding: 18px 20px;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.zh-executive-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+}
+
+.zh-executive-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--teal-green);
+  margin: 0;
+}
