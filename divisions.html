@@ -6,9 +6,150 @@
   <title>Divisions – Zinova Healthcare</title>
   <link rel="icon" type="image/png" href="assets/zinova-mark.png">
   <link rel="stylesheet" href="assets/zinova.css">
+  <style>
+    /* Divisions Page Enhancements */
+    .zh-divisions-hero {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .zh-divisions-hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .zh-divisions-hero p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .zh-divisions-content {
+      padding: 70px 0 90px;
+      background-color: #f8fafc;
+    }
+
+    .zh-divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 10px;
+    }
+
+    .zh-division-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .zh-division-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(2, 132, 199, 0.1);
+      border-color: #0284c7;
+    }
+
+    /* Professional Vector Icon Container */
+    .zh-division-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 16px;
+      background: #f0f9ff;
+      border: 1px solid #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: background 0.3s ease;
+    }
+
+    .zh-division-card:hover .zh-division-icon {
+      background: #0284c7;
+    }
+
+    .zh-division-card:hover .zh-division-icon svg {
+      stroke: #ffffff;
+    }
+
+    .zh-division-card h3 {
+      font-size: 1.3rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .zh-division-card p {
+      font-size: 0.94rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Division Feature List */
+    .zh-division-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0 0;
+      text-align: left;
+      width: 100%;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 16px;
+    }
+
+    .zh-division-list li {
+      font-size: 0.85rem;
+      color: #475569;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .zh-division-list li::before {
+      content: "✓";
+      color: #0284c7;
+      font-weight: 800;
+    }
+
+    /* Bottom CTA Banner */
+    .zh-divisions-cta {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    }
+
+    .zh-divisions-cta h3 {
+      font-size: 1.5rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .zh-divisions-cta p {
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Corporate Header -->
   <header class="zh-header">
     <div class="zh-container zh-header__main">
       <a href="index.html" class="zh-logo">
@@ -28,43 +169,101 @@
     </div>
   </header>
 
-  <main class="zh-section zh-section--gray">
+  <!-- Hero Section -->
+  <section class="zh-divisions-hero">
     <div class="zh-container">
-      <h1 class="zh-section-title zh-text-center">Our Core Business Divisions</h1>
-      <div class="zh-divisions-grid" style="margin-top: 40px;">
+      <h1>Our Core Business Divisions</h1>
+      <p>Delivering excellence across pharmaceutical formulation, nutritional science, and international healthcare logistics through dedicated specialized operational units.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="zh-divisions-content">
+    <div class="zh-container">
+      <div class="zh-divisions-grid">
+        
+        <!-- Division 1: Pharmaceutical Manufacturing -->
         <div class="zh-division-card">
-          <div class="zh-division-icon">🔬</div>
+          <div class="zh-division-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v7.31L4.5 19.3A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-2.7L14 9.31V2"/>
+              <path d="M8.5 2h7"/>
+              <path d="M14 9.3 9 15"/>
+            </svg>
+          </div>
           <h3>Pharmaceutical Manufacturing</h3>
-          <p>Production facilities dedicated to solid oral doses (tablets, capsules), oral liquids, and topical solutions manufactured under controlled conditions.</p>
+          <p>State-of-the-art production facilities dedicated to solid oral doses (tablets, capsules), oral liquids, and topical solutions manufactured under strict environmental controls.</p>
+          <ul class="zh-division-list">
+            <li>Solid & Liquid Dose Lines</li>
+            <li>Controlled Cleanroom Environment</li>
+            <li>High-Volume Output Capacity</li>
+          </ul>
         </div>
+
+        <!-- Division 2: Nutraceuticals & Wellness -->
         <div class="zh-division-card">
-          <div class="zh-division-icon">💊</div>
+          <div class="zh-division-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+              <path d="m8.5 8.5 7 7"/>
+            </svg>
+          </div>
           <h3>Nutraceuticals & Wellness</h3>
-          <p>Preventive care formulations, dietary supplements, essential minerals, and multivitamin lines engineered for daily health support.</p>
+          <p>Preventive care formulations, dietary supplements, essential minerals, and multivitamin lines engineered to meet modern preventive healthcare demands.</p>
+          <ul class="zh-division-list">
+            <li>Essential Micronutrients & Vitamins</li>
+            <li>Custom Wellness Formulations</li>
+            <li>Strict Bioavailability Standards</li>
+          </ul>
         </div>
+
+        <!-- Division 3: Global Logistics & Export -->
         <div class="zh-division-card">
-          <div class="zh-division-icon">🌐</div>
+          <div class="zh-division-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
           <h3>Global Logistics & Export</h3>
-          <p>A streamlined supply-chain network designed for cold-chain preservation and rapid distribution to international partner networks.</p>
+          <p>A streamlined supply-chain network designed for temperature-controlled preservation and swift distribution to international commercial distribution networks.</p>
+          <ul class="zh-division-list">
+            <li>Cold-Chain Storage & Transport</li>
+            <li>Regulatory Compliance Exporting</li>
+            <li>Global Supply Chain Integration</li>
+          </ul>
         </div>
+
       </div>
+
+      <!-- Call to Action Section -->
+      <div class="zh-divisions-cta">
+        <h3>Looking to Partner With One of Our Divisions?</h3>
+        <p>Explore contract manufacturing, distribution partnerships, or bulk formulation inquiries with Zinova Healthcare.</p>
+        <a href="contact.html" class="zh-btn zh-btn--primary">Initiate Partnership Inquiry</a>
+      </div>
+
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="zh-footer">
     <div class="zh-container zh-footer__bottom">
       <p>&copy; 2026 Zinova Healthcare. All Rights Reserved.</p>
     </div>
   </footer>
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/923312647163?text=Hello%20Zinova%20Healthcare,%20I%20have%20a%20query." 
-   class="zh-whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   aria-label="Chat on WhatsApp">
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 2A13.94 13.94 0 0 0 4.1 22.81L2 29l6.35-2.02A13.94 13.94 0 1 0 16 2zm0 25.5a11.51 11.51 0 0 1-5.88-1.61l-.42-.25-3.76 1.2 1.22-3.66-.27-.43A11.52 11.52 0 1 1 16 27.5zm6.31-8.62c-.35-.17-2.05-1.01-2.37-1.12s-.55-.17-.79.17-.92 1.12-1.13 1.35-.42.26-.77.09a9.7 9.7 0 0 1-2.85-1.76 10.7 10.7 0 0 1-1.97-2.45c-.2-.35-.02-.54.15-.71.16-.16.35-.42.52-.63a2.38 2.38 0 0 0 .35-.59c.09-.17.04-.32-.02-.45s-.79-1.9-1.08-2.6c-.28-.68-.57-.59-.79-.6h-.67a1.29 1.29 0 0 0-.93.43 3.91 3.91 0 0 0-1.22 2.91 6.8 6.8 0 0 0 1.42 3.61c.17.23 2.44 3.73 5.92 5.23 2.07.89 2.87.89 3.9.74a3.3 3.3 0 0 0 2.16-1.52 2.7 2.7 0 0 0 .19-1.52c-.08-.13-.26-.21-.61-.38z" fill="#FFFFFF"/>
-  </svg>
-</a>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/923312647163?text=Hello%20Zinova%20Healthcare,%20I%20have%20a%20query." 
+     class="zh-whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2A13.94 13.94 0 0 0 4.1 22.81L2 29l6.35-2.02A13.94 13.94 0 1 0 16 2zm0 25.5a11.51 11.51 0 0 1-5.88-1.61l-.42-.25-3.76 1.2 1.22-3.66-.27-.43A11.52 11.52 0 1 1 16 27.5zm6.31-8.62c-.35-.17-2.05-1.01-2.37-1.12s-.55-.17-.79.17-.92 1.12-1.13 1.35-.42.26-.77.09a9.7 9.7 0 0 1-2.85-1.76 10.7 10.7 0 0 1-1.97-2.45c-.2-.35-.02-.54.15-.71.16-.16.35-.42.52-.63a2.38 2.38 0 0 0 .35-.59c.09-.17.04-.32-.02-.45s-.79-1.9-1.08-2.6c-.28-.68-.57-.59-.79-.6h-.67a1.29 1.29 0 0 0-.93.43 3.91 3.91 0 0 0-1.22 2.91 6.8 6.8 0 0 0 1.42 3.61c.17.23 2.44 3.73 5.92 5.23 2.07.89 2.87.89 3.9.74a3.3 3.3 0 0 0 2.16-1.52 2.7 2.7 0 0 0 .19-1.52c-.08-.13-.26-.21-.61-.38z" fill="#FFFFFF"/>
+    </svg>
+  </a>
+
 </body>
 </html>
