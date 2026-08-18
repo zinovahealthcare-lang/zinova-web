@@ -6,9 +6,195 @@
   <title>About Us – Zinova Healthcare</title>
   <link rel="icon" type="image/png" href="assets/zinova-mark.png">
   <link rel="stylesheet" href="assets/zinova.css">
+  <style>
+    /* About Us Custom Styling */
+    .zh-about-hero {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .zh-about-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .zh-about-hero p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .zh-about-content {
+      padding: 70px 0 90px;
+      background-color: #f8fafc;
+    }
+
+    /* Mission & Vision Grid */
+    .zh-mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .zh-mission-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 36px 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+    }
+
+    .zh-mission-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(2, 132, 199, 0.08);
+      border-color: #0284c7;
+    }
+
+    .zh-mission-card__icon {
+      width: 56px;
+      height: 56px;
+      background: #f0f9ff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .zh-mission-card h3 {
+      font-size: 1.3rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .zh-mission-card p {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Stats Section */
+    .zh-stats-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin-bottom: 60px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .zh-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .zh-stat-card {
+      padding: 10px;
+    }
+
+    .zh-stat-card h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0284c7;
+      margin: 0 0 8px 0;
+      line-height: 1;
+    }
+
+    .zh-stat-card p {
+      font-size: 0.92rem;
+      color: #64748b;
+      font-weight: 600;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Core Values */
+    .zh-section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .zh-section-title h2 {
+      font-size: 2rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .zh-values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .zh-value-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .zh-value-card:hover {
+      border-color: #0284c7;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.06);
+    }
+
+    .zh-value-card h4 {
+      font-size: 1.1rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .zh-value-card p {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .zh-about-cta {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    }
+
+    .zh-about-cta h3 {
+      font-size: 1.5rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .zh-about-cta p {
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="zh-header">
     <div class="zh-container zh-header__main">
       <a href="index.html" class="zh-logo">
@@ -28,49 +214,102 @@
     </div>
   </header>
 
-  <main class="zh-section">
+  <!-- Hero Section -->
+  <section class="zh-about-hero">
     <div class="zh-container">
-      <h1 class="zh-section-title">About Zinova Healthcare</h1>
-      <p class="zh-lead">Zinova Healthcare stands at the forefront of pharmaceutical formulation, manufacturing, and commercial distribution.</p>
-      
-      <div class="zh-about-grid" style="margin-top: 40px;">
-        <div class="zh-about-text">
+      <h1>About Zinova Healthcare</h1>
+      <p>Standing at the forefront of pharmaceutical formulation, manufacturing, and commercial distribution to deliver compliant, high-grade healthcare solutions worldwide.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="zh-about-content">
+    <div class="zh-container">
+
+      <!-- Mission & Vision Cards -->
+      <div class="zh-mission-grid">
+        <div class="zh-mission-card">
+          <div class="zh-mission-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
           <h3>Our Corporate Mission</h3>
           <p>To improve human life by manufacturing compliant, accessible, and high-quality medicine across global markets. Our operational standards adhere strictly to international regulatory frameworks.</p>
         </div>
+
+        <div class="zh-mission-card">
+          <div class="zh-mission-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <h3>Global Vision</h3>
+          <p>To establish Zinova Healthcare as a trusted global pharmaceutical mark, recognized for formulation excellence, supply chain reliability, and uncompromising safety standards.</p>
+        </div>
       </div>
 
-      <div class="zh-stats-row" style="margin-top: 50px;">
-        <div class="zh-stat-card">
-          <h3>100+</h3>
-          <p>Approved Formulations</p>
-        </div>
-        <div class="zh-stat-card">
-          <h3>15+</h3>
-          <p>Export Destinations</p>
-        </div>
-        <div class="zh-stat-card">
-          <h3>100%</h3>
-          <p>Regulatory Compliance</p>
+      <!-- Key Statistics Bar -->
+      <div class="zh-stats-section">
+        <div class="zh-stats-grid">
+          <div class="zh-stat-card">
+            <h3>100+</h3>
+            <p>Approved Formulations</p>
+          </div>
+          <div class="zh-stat-card">
+            <h3>15+</h3>
+            <p>Export Destinations</p>
+          </div>
+          <div class="zh-stat-card">
+            <h3>100%</h3>
+            <p>Regulatory Compliance</p>
+          </div>
         </div>
       </div>
+
+      <!-- Core Values -->
+      <div class="zh-section-title">
+        <h2>Our Core Commitments</h2>
+      </div>
+
+      <div class="zh-values-grid">
+        <div class="zh-value-card">
+          <h4>Quality First</h4>
+          <p>Adhering strictly to cGMP guidelines and multi-stage testing protocols for every formulation.</p>
+        </div>
+        <div class="zh-value-card">
+          <h4>Global Accessibility</h4>
+          <p>Expanding supply chains to ensure high-grade medicines reach international partner networks.</p>
+        </div>
+        <div class="zh-value-card">
+          <h4>Scientific Excellence</h4>
+          <p>Investing in precise manufacturing processes and bioavailable product engineering.</p>
+        </div>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div class="zh-about-cta">
+        <h3>Connect With Our Corporate Team</h3>
+        <p>Interested in distribution partnerships or learning more about our operational facilities?</p>
+        <a href="contact.html" class="zh-btn zh-btn--primary">Get in Touch</a>
+      </div>
+
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="zh-footer">
     <div class="zh-container zh-footer__bottom">
       <p>&copy; 2026 Zinova Healthcare. All Rights Reserved.</p>
     </div>
   </footer>
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/923312647163?text=Hello%20Zinova%20Healthcare,%20I%20have%20a%20query." 
-   class="zh-whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   aria-label="Chat on WhatsApp">
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 2A13.94 13.94 0 0 0 4.1 22.81L2 29l6.35-2.02A13.94 13.94 0 1 0 16 2zm0 25.5a11.51 11.51 0 0 1-5.88-1.61l-.42-.25-3.76 1.2 1.22-3.66-.27-.43A11.52 11.52 0 1 1 16 27.5zm6.31-8.62c-.35-.17-2.05-1.01-2.37-1.12s-.55-.17-.79.17-.92 1.12-1.13 1.35-.42.26-.77.09a9.7 9.7 0 0 1-2.85-1.76 10.7 10.7 0 0 1-1.97-2.45c-.2-.35-.02-.54.15-.71.16-.16.35-.42.52-.63a2.38 2.38 0 0 0 .35-.59c.09-.17.04-.32-.02-.45s-.79-1.9-1.08-2.6c-.28-.68-.57-.59-.79-.6h-.67a1.29 1.29 0 0 0-.93.43 3.91 3.91 0 0 0-1.22 2.91 6.8 6.8 0 0 0 1.42 3.61c.17.23 2.44 3.73 5.92 5.23 2.07.89 2.87.89 3.9.74a3.3 3.3 0 0 0 2.16-1.52 2.7 2.7 0 0 0 .19-1.52c-.08-.13-.26-.21-.61-.38z" fill="#FFFFFF"/>
-  </svg>
-</a>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/923312647163?text=Hello%20Zinova%20Healthcare,%20I%20have%20a%20query." 
+     class="zh-whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2A13.94 13.94 0 0 0 4.1 22.81L2 29l6.35-2.02A13.94 13.94 0 1 0 16 2zm0 25.5a11.51 11.51 0 0 1-5.88-1.61l-.42-.25-3.76 1.2 1.22-3.66-.27-.43A11.52 11.52 0 1 1 16 27.5zm6.31-8.62c-.35-.17-2.05-1.01-2.37-1.12s-.55-.17-.79.17-.92 1.12-1.13 1.35-.42.26-.77.09a9.7 9.7 0 0 1-2.85-1.76 10.7 10.7 0 0 1-1.97-2.45c-.2-.35-.02-.54.15-.71.16-.16.35-.42.52-.63a2.38 2.38 0 0 0 .35-.59c.09-.17.04-.32-.02-.45s-.79-1.9-1.08-2.6c-.28-.68-.57-.59-.79-.6h-.67a1.29 1.29 0 0 0-.93.43 3.91 3.91 0 0 0-1.22 2.91 6.8 6.8 0 0 0 1.42 3.61c.17.23 2.44 3.73 5.92 5.23 2.07.89 2.87.89 3.9.74a3.3 3.3 0 0 0 2.16-1.52 2.7 2.7 0 0 0 .19-1.52c-.08-.13-.26-.21-.61-.38z" fill="#FFFFFF"/>
+    </svg>
+  </a>
+
 </body>
 </html>
