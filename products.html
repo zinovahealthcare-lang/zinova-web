@@ -80,43 +80,42 @@
       const grid = document.querySelector('.zh-products-grid');
 
       try {
-        // Fetch products directly from Netlify deployment
         const response = await fetch('/content/products.json');
-
-        if (!response.ok) {
-          console.warn('content/products.json not found yet, showing fallbacks.');
-          return;
-        }
+        if (!response.ok) return;
 
         const products = await response.json();
-
         if (!Array.isArray(products) || products.length === 0) return;
 
-        // Clear fallback hardcoded products
         grid.innerHTML = '';
 
         products.forEach(product => {
           const card = document.createElement('div');
           card.className = 'zh-product-card';
 
-          const title = product.title || 'Untitled Product';
+          const title = product.title || 'Pharmaceutical Product';
           const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
-          // Cleans up any HTML tags if description comes from a rich-text editor
           const rawDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : '';
-          const details = rawDesc || (product.price ? `PKR ${product.price}` : '');
+          const priceDisplay = product.price ? `PKR ${product.price}` : 'Inquire for Price';
 
           card.innerHTML = `
             <div class="zh-product-card__img">
               <img src="${imgSrc}" alt="${title}">
             </div>
-            <h4>${title}</h4>
-            <span class="zh-product-cat">${details}</span>
+            <div class="zh-product-card__body">
+              <h4>${title}</h4>
+              <span class="zh-product-badge">Formulation</span>
+              ${rawDesc ? `<p class="zh-product-desc">${rawDesc}</p>` : ''}
+              <div class="zh-product-card__footer">
+                <span class="zh-product-price">${priceDisplay}</span>
+                <a href="contact.html" class="zh-product-btn">Inquire Now</a>
+              </div>
+            </div>
           `;
           grid.appendChild(card);
         });
 
       } catch (err) {
-        console.error('Error loading products from products.json:', err);
+        console.error('Error rendering dynamic products:', err);
       }
     }
 
