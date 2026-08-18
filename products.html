@@ -74,46 +74,40 @@
     </svg>
   </a>
 
-  <!-- Dynamic Product Loader Script -->
+ <!-- Dynamic Product Loader Script -->
   <script>
     async function fetchCMSProducts() {
       const grid = document.querySelector('.zh-products-grid');
-      const owner = 'zinovahealthcare-lang';
-      const repo = 'zinova-web';
-      const folderPath = 'content/products';
 
       try {
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`);
+        // Fetch products directly from your site deployment
+        // Add your created json filenames here or maintain an index.json
+        const response = await fetch('/content/products/testingg-123.json');
+        
         if (!response.ok) return;
 
-        const files = await response.json();
-        const jsonFiles = files.filter(file => file.name.endsWith('.json'));
+        const product = await response.json();
+        
+        // Clear hardcoded fallback cards once CMS product is retrieved
+        grid.innerHTML = ''; 
 
-        if (jsonFiles.length === 0) return;
+        const card = document.createElement('div');
+        card.className = 'zh-product-card';
+        
+        const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
+        const categoryOrPrice = product.description || (product.price ? `PKR ${product.price}` : '');
 
-        const productFetches = jsonFiles.map(file => fetch(file.download_url).then(res => res.json()));
-        const products = await Promise.all(productFetches);
+        card.innerHTML = `
+          <div class="zh-product-card__img">
+            <img src="${imgSrc}" alt="${product.title || 'Product'}">
+          </div>
+          <h4>${product.title || 'Untitled Product'}</h4>
+          <span class="zh-product-cat">${categoryOrPrice}</span>
+        `;
+        grid.appendChild(card);
 
-        grid.innerHTML = ''; // Clear fallback items when CMS items exist
-
-        products.forEach(product => {
-          const card = document.createElement('div');
-          card.className = 'zh-product-card';
-          
-          const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
-          const categoryOrPrice = product.description || (product.price ? `PKR ${product.price}` : '');
-
-          card.innerHTML = `
-            <div class="zh-product-card__img">
-              <img src="${imgSrc}" alt="${product.title || 'Product'}">
-            </div>
-            <h4>${product.title || 'Untitled Product'}</h4>
-            <span class="zh-product-cat">${categoryOrPrice}</span>
-          `;
-          grid.appendChild(card);
-        });
       } catch (err) {
-        console.warn('Loading fallback products list:', err);
+        console.warn('Unable to load dynamic CMS products, showing fallbacks:', err);
       }
     }
 
