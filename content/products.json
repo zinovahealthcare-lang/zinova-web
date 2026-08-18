@@ -1,14 +1,14 @@
 [
   {
-    "title": "itemm numm 3",
-    "price": "50000",
-    "image": "/assets/uploads/Zenova.png",
-    "description": "yahh nigga"
-  },
-  {
     "title": "Levive",
     "price": "1100",
     "image": "/assets/uploads/Capturew.jpg.jpg",
     "description": "Probiotic Sachets"
+  },
+  {
+    "title": "Quacid",
+    "price": "280",
+    "image": "/assets/uploads/Capturew.jpg-1.jpg",
+    "description": "Antacid Suspension (Syrup)"
   }
 ]
