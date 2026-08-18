@@ -16,5 +16,11 @@
     "price": "250",
     "image": "/assets/uploads/afferi.jpg",
     "description": "Syrup"
+  },
+  {
+    "title": "DD3K2",
+    "price": "320",
+    "image": "/assets/uploads/dd3k2.jpg",
+    "description": "SoftGel Capsule"
   }
 ]
