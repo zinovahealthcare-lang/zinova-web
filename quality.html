@@ -3,157 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quality Assurance – Zinova Healthcare</title>
+  <title>Divisions – Zinova Healthcare</title>
   <link rel="icon" type="image/png" href="assets/zinova-mark.png">
   <link rel="stylesheet" href="assets/zinova.css">
   <style>
-    /* QA Page Custom Styling */
-    .zh-qa-hero {
+    /* Mobile Navigation Styles */
+    .zh-header__right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .zh-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #0f172a;
+      padding: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .zh-header__main {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px 20px;
+      }
+
+      .zh-mobile-toggle {
+        display: block;
+      }
+
+      .zh-nav {
+        width: 100%;
+        order: 3;
+        display: none;
+        margin-top: 15px;
+      }
+
+      .zh-nav.is-open {
+        display: block;
+      }
+
+      .zh-nav__list {
+        flex-direction: column;
+        gap: 12px;
+        background: #ffffff;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    /* Divisions Page Enhancements */
+    .zh-divisions-hero {
       background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
       color: #ffffff;
-      padding: 80px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
 
-    .zh-qa-hero h1 {
-      font-size: 2.5rem;
+    .zh-divisions-hero h1 {
+      font-size: 2.4rem;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: -0.5px;
     }
 
-    .zh-qa-hero p {
-      font-size: 1.1rem;
+    .zh-divisions-hero p {
+      font-size: 1.05rem;
       line-height: 1.6;
-      max-width: 760px;
+      max-width: 720px;
       margin: 0 auto;
       opacity: 0.95;
     }
 
-    .zh-qa-content {
-      padding: 70px 0;
+    .zh-divisions-content {
+      padding: 70px 0 90px;
       background-color: #f8fafc;
     }
 
-    .zh-section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .zh-section-title h2 {
-      font-size: 2rem;
-      color: #0f172a;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .zh-section-title p {
-      color: #64748b;
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    /* Quality Pillars Grid */
-    .zh-qa-grid {
+    .zh-divisions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-bottom: 70px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 10px;
     }
 
-    .zh-qa-card {
+    .zh-division-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      padding: 32px 24px;
+      border-radius: 16px;
+      padding: 36px 28px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .zh-qa-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(2, 132, 199, 0.1);
+    .zh-division-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(2, 132, 199, 0.1);
       border-color: #0284c7;
     }
 
-    .zh-qa-card__icon {
-      width: 60px;
-      height: 60px;
+    /* Professional Vector Icon Container */
+    .zh-division-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 16px;
       background: #f0f9ff;
-      border-radius: 12px;
+      border: 1px solid #e0f2fe;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin-bottom: 24px;
+      transition: background 0.3s ease;
     }
 
-    .zh-qa-card h3 {
-      font-size: 1.25rem;
+    .zh-division-card:hover .zh-division-icon {
+      background: #0284c7;
+    }
+
+    .zh-division-card:hover .zh-division-icon svg {
+      stroke: #ffffff;
+    }
+
+    .zh-division-card h3 {
+      font-size: 1.3rem;
       color: #0f172a;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    .zh-qa-card p {
-      font-size: 0.92rem;
+    .zh-division-card p {
+      font-size: 0.94rem;
       color: #64748b;
       line-height: 1.6;
       margin: 0;
     }
 
-    /* Process Flow */
-.zh-process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
+    /* Division Feature List */
+    .zh-division-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0 0;
+      text-align: left;
+      width: 100%;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 16px;
+    }
 
-.zh-process-step {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-}
+    .zh-division-list li {
+      font-size: 0.85rem;
+      color: #475569;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.zh-process-step:hover {
-  border-color: #0284c7;
-  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08);
-}
+    .zh-division-list li::before {
+      content: "✓";
+      color: #0284c7;
+      font-weight: 800;
+    }
 
-.zh-step-num {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #0284c7;
-  background: #f0f9ff;
-  border: 1px solid #e0f2fe;
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 14px;
-  display: inline-block;
-  line-height: 1;
-}
-
-.zh-process-step h4 {
-  font-size: 1.1rem;
-  color: #0f172a;
-  font-weight: 700;
-  margin: 0 0 10px 0;
-  line-height: 1.3;
-}
-
-.zh-process-step p {
-  font-size: 0.88rem;
-  color: #64748b;
-  line-height: 1.55;
-  margin: 0;
-}
-    /* CTA Section */
-    .zh-qa-cta {
+    /* Bottom CTA Banner */
+    .zh-divisions-cta {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
@@ -163,14 +183,14 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     }
 
-    .zh-qa-cta h3 {
+    .zh-divisions-cta h3 {
       font-size: 1.5rem;
       color: #0f172a;
       font-weight: 700;
       margin-bottom: 10px;
     }
 
-    .zh-qa-cta p {
+    .zh-divisions-cta p {
       color: #64748b;
       margin-bottom: 24px;
     }
@@ -178,7 +198,7 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Corporate Header -->
   <header class="zh-header">
     <div class="zh-container zh-header__main">
       <a href="index.html" class="zh-logo">
@@ -188,102 +208,98 @@
         <ul class="zh-nav__list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="divisions.html">Divisions</a></li>
+          <li><a href="divisions.html" class="active">Divisions</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="quality.html" class="active">Quality Assurance</a></li>
+          <li><a href="quality.html">Quality Assurance</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="zh-btn zh-btn--primary">Inquire Now</a>
+      <div class="zh-header__right">
+        <a href="contact.html" class="zh-btn zh-btn--primary">Inquire Now</a>
+        <button class="zh-mobile-toggle" aria-label="Toggle Navigation" onclick="document.querySelector('.zh-nav').classList.toggle('is-open')">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="zh-qa-hero">
+  <section class="zh-divisions-hero">
     <div class="zh-container">
-      <h1>Quality Policy & Regulatory Assurance</h1>
-      <p>Zinova Healthcare is committed to uncompromised safety and efficacy. Every pharmaceutical formulation adheres strictly to ISO standards and cGMP guidelines through rigorous testing protocols.</p>
+      <h1>Our Core Business Divisions</h1>
+      <p>Delivering excellence across pharmaceutical formulation, nutritional science, and international healthcare logistics through dedicated specialized operational units.</p>
     </div>
   </section>
 
   <!-- Main Content -->
-  <main class="zh-qa-content">
+  <main class="zh-divisions-content">
     <div class="zh-container">
-      
-      <!-- Core Pillars -->
-      <div class="zh-section-title">
-        <h2>Our Quality Standards</h2>
-        <p>Built upon strict global regulatory compliance and advanced laboratory controls.</p>
+      <div class="zh-divisions-grid">
+        
+        <!-- Division 1: Pharmaceutical Manufacturing -->
+        <div class="zh-division-card">
+          <div class="zh-division-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v7.31L4.5 19.3A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-2.7L14 9.31V2"/>
+              <path d="M8.5 2h7"/>
+              <path d="M14 9.3 9 15"/>
+            </svg>
+          </div>
+          <h3>Pharmaceutical Manufacturing</h3>
+          <p>State-of-the-art production facilities dedicated to solid oral doses (tablets, capsules), oral liquids, and topical solutions manufactured under strict environmental controls.</p>
+          <ul class="zh-division-list">
+            <li>Solid & Liquid Dose Lines</li>
+            <li>Controlled Cleanroom Environment</li>
+            <li>High-Volume Output Capacity</li>
+          </ul>
+        </div>
+
+        <!-- Division 2: Nutraceuticals & Wellness -->
+        <div class="zh-division-card">
+          <div class="zh-division-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+              <path d="m8.5 8.5 7 7"/>
+            </svg>
+          </div>
+          <h3>Nutraceuticals & Wellness</h3>
+          <p>Preventive care formulations, dietary supplements, essential minerals, and multivitamin lines engineered to meet modern preventive healthcare demands.</p>
+          <ul class="zh-division-list">
+            <li>Essential Micronutrients & Vitamins</li>
+            <li>Custom Wellness Formulations</li>
+            <li>Strict Bioavailability Standards</li>
+          </ul>
+        </div>
+
+        <!-- Division 3: Global Logistics & Export -->
+        <div class="zh-division-card">
+          <div class="zh-division-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Global Logistics & Export</h3>
+          <p>A streamlined supply-chain network designed for temperature-controlled preservation and swift distribution to international commercial distribution networks.</p>
+          <ul class="zh-division-list">
+            <li>Cold-Chain Storage & Transport</li>
+            <li>Regulatory Compliance Exporting</li>
+            <li>Global Supply Chain Integration</li>
+          </ul>
+        </div>
+
       </div>
 
-      <div class="zh-qa-grid">
-        <div class="zh-qa-card">
-          <div class="zh-qa-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>cGMP Compliance</h3>
-          <p>Adherence to Current Good Manufacturing Practices to ensure safety, efficacy, and consistency in every batch produced.</p>
-        </div>
-
-        <div class="zh-qa-card">
-          <div class="zh-qa-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>ISO Certification</h3>
-          <p>Quality management systems operational under standardized international health and pharmaceutical benchmarks.</p>
-        </div>
-
-        <div class="zh-qa-card">
-          <div class="zh-qa-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M10 2v7.31L4.5 19.3A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-2.7L14 9.31V2"/><path d="M8.5 2h7"/></svg>
-          </div>
-          <h3>Advanced QC Testing</h3>
-          <p>Analytical testing of raw materials, active pharmaceutical ingredients (APIs), and packaging materials.</p>
-        </div>
-
-        <div class="zh-qa-card">
-          <div class="zh-qa-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
-          </div>
-          <h3>Batch Release Protocol</h3>
-          <p>Multi-tier documentation and verification prior to the final release of any commercial formulation.</p>
-        </div>
-      </div>
-
-      <!-- QA Process -->
-      <div class="zh-section-title">
-        <h2>Quality Control Workflow</h2>
-        <p>End-to-end oversight throughout our production lifecycle.</p>
-      </div>
-
-      <div class="zh-process-grid">
-        <div class="zh-process-step">
-          <span class="zh-step-num">01</span>
-          <h4>Raw Material Audit</h4>
-          <p>Verification and identity testing of incoming active and inactive ingredients.</p>
-        </div>
-        <div class="zh-process-step">
-          <span class="zh-step-num">02</span>
-          <h4>In-Process Inspection</h4>
-          <p>Real-time continuous monitoring during mixing, granulation, and compression stages.</p>
-        </div>
-        <div class="zh-process-step">
-          <span class="zh-step-num">03</span>
-          <h4>Finished Product Testing</h4>
-          <p>Dissolution, assay, and microbiological evaluation against target specifications.</p>
-        </div>
-        <div class="zh-process-step">
-          <span class="zh-step-num">04</span>
-          <h4>Release & Traceability</h4>
-          <p>Final documentation review, batch record signing, and controlled distribution tracking.</p>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="zh-qa-cta">
-        <h3>Require Quality & Compliance Documentation?</h3>
-        <p>Contact our regulatory affairs team for certificate of analysis (COA) or dossier details.</p>
-        <a href="contact.html" class="zh-btn zh-btn--primary">Contact Quality Team</a>
+      <!-- Call to Action Section -->
+      <div class="zh-divisions-cta">
+        <h3>Looking to Partner With One of Our Divisions?</h3>
+        <p>Explore contract manufacturing, distribution partnerships, or bulk formulation inquiries with Zinova Healthcare.</p>
+        <a href="contact.html" class="zh-btn zh-btn--primary">Initiate Partnership Inquiry</a>
       </div>
 
     </div>
