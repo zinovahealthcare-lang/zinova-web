@@ -22,5 +22,11 @@
     "price": "320",
     "image": "/assets/uploads/dd3k2.jpg",
     "description": "SoftGel Capsule"
+  },
+  {
+    "title": "Hyacol",
+    "price": "1299",
+    "image": "/assets/uploads/hyacol.jpg",
+    "description": "Tablets"
   }
 ]
