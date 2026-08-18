@@ -10,5 +10,11 @@
     "price": "280",
     "image": "/assets/uploads/Capture-1.jpg",
     "description": "Antacid Suspension (Syrup)"
+  },
+  {
+    "title": "Afferi",
+    "price": "250",
+    "image": "/assets/uploads/afferi.jpg",
+    "description": "Syrup"
   }
 ]
