@@ -103,44 +103,55 @@
     }
 
     /* Process Flow */
-    .zh-process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.zh-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
 
-    .zh-process-step {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 24px;
-      position: relative;
-    }
+.zh-process-step {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
 
-    .zh-step-num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #0284c7;
-      opacity: 0.3;
-      position: absolute;
-      top: 16px;
-      right: 20px;
-    }
+.zh-process-step:hover {
+  border-color: #0284c7;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08);
+}
 
-    .zh-process-step h4 {
-      font-size: 1.1rem;
-      color: #0f172a;
-      font-weight: 700;
-      margin: 0 0 8px;
-    }
+.zh-step-num {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  display: inline-block;
+  line-height: 1;
+}
 
-    .zh-process-step p {
-      font-size: 0.88rem;
-      color: #64748b;
-      line-height: 1.5;
-      margin: 0;
-    }
+.zh-process-step h4 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
 
+.zh-process-step p {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
     /* CTA Section */
     .zh-qa-cta {
       background: #ffffff;
