@@ -78,60 +78,45 @@
   <script>
     async function fetchCMSProducts() {
       const grid = document.querySelector('.zh-products-grid');
-      const owner = 'zinovahealthcare-lang';
-      const repo = 'zinova-web';
-      const folderPath = 'content/products';
 
       try {
-        // 1. Fetch file directory list from GitHub API
-        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
-        const response = await fetch(apiUrl);
+        // Fetch products directly from Netlify deployment
+        const response = await fetch('/content/products.json');
 
         if (!response.ok) {
-          console.warn('GitHub API request failed with status:', response.status);
+          console.warn('content/products.json not found yet, showing fallbacks.');
           return;
         }
 
-        const files = await response.json();
-        const jsonFiles = files.filter(file => file.name.endsWith('.json'));
+        const products = await response.json();
 
-        if (jsonFiles.length === 0) return;
+        if (!Array.isArray(products) || products.length === 0) return;
 
-        // 2. Fetch data from each JSON product file on Netlify
-        const productPromises = jsonFiles.map(file =>
-          fetch(`/content/products/${file.name}`)
-            .then(res => res.ok ? res.json() : null)
-            .catch(() => null)
-        );
-
-        const products = (await Promise.all(productPromises)).filter(p => p !== null);
-
-        if (products.length === 0) return;
-
-        // 3. Clear static fallbacks and render dynamic products
+        // Clear fallback hardcoded products
         grid.innerHTML = '';
 
         products.forEach(product => {
           const card = document.createElement('div');
           card.className = 'zh-product-card';
 
-          // Support multiple field key conventions from Pages CMS
-          const title = product.title || product.name || product['product_name'] || product['product-name'] || 'Untitled Product';
-          const imgSrc = product.image || product['product_image'] || product['product-image'] || 'assets/zinova-mark.png';
-          const description = product.description || product.category || (product.price ? `PKR ${product.price}` : '');
+          const title = product.title || 'Untitled Product';
+          const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
+          // Cleans up any HTML tags if description comes from a rich-text editor
+          const rawDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : '';
+          const details = rawDesc || (product.price ? `PKR ${product.price}` : '');
 
           card.innerHTML = `
             <div class="zh-product-card__img">
               <img src="${imgSrc}" alt="${title}">
             </div>
             <h4>${title}</h4>
-            <span class="zh-product-cat">${description}</span>
+            <span class="zh-product-cat">${details}</span>
           `;
           grid.appendChild(card);
         });
 
       } catch (err) {
-        console.error('Error rendering CMS products:', err);
+        console.error('Error loading products from products.json:', err);
       }
     }
 
