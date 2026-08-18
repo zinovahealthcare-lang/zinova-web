@@ -14,6 +14,10 @@ content:
         fields:
           - { name: hero_title, label: Hero Title, type: string }
           - { name: hero_subtitle, label: Hero Subtitle, type: text }
+          - { name: hero_image, label: Hero Image, type: image }
+          - { name: doctor_image, label: Who We Are Image, type: image }
+          - { name: who_we_are_text, label: Who We Are Text, type: rich-text }
+          - { name: what_we_do_text, label: What We Do Text, type: rich-text }
 
       - name: contact
         label: Contact Page
