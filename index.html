@@ -27,7 +27,16 @@
         <img src="assets/zinova-logo.png" alt="Zinova Healthcare Logo" onerror="this.style.display='none'">
         <span class="zh-logo__tagline">Innovation in Every Dose</span>
       </a>
-      <nav class="zh-nav">
+
+      <!-- Mobile Hamburger Button -->
+      <button class="zh-nav-toggle" id="zhNavToggle" aria-label="Toggle Mobile Navigation">
+        <span class="zh-hamburger-bar"></span>
+        <span class="zh-hamburger-bar"></span>
+        <span class="zh-hamburger-bar"></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <nav class="zh-nav" id="zhNavMenu">
         <ul class="zh-nav__list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -37,7 +46,8 @@
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
-      <a href="contact.html" class="zh-btn zh-btn--primary">Inquire Now</a>
+
+      <a href="contact.html" class="zh-btn zh-btn--primary zh-header-btn">Inquire Now</a>
     </div>
   </header>
 
@@ -96,10 +106,9 @@
     <!-- Who We Are & What We Do Section -->
     <section class="zh-section zh-about-overview">
       <div class="zh-container">
-        
         <div class="zh-about-overview__grid">
           
-          <!-- Professional Executive Card -->
+          <!-- Executive Card -->
           <div class="zh-executive-card">
             <div class="zh-executive-card__badge">Leadership</div>
             <div class="zh-executive-card__image">
@@ -190,6 +199,19 @@
       <path d="M16 2A13.94 13.94 0 0 0 4.1 22.81L2 29l6.35-2.02A13.94 13.94 0 1 0 16 2zm0 25.5a11.51 11.51 0 0 1-5.88-1.61l-.42-.25-3.76 1.2 1.22-3.66-.27-.43A11.52 11.52 0 1 1 16 27.5zm6.31-8.62c-.35-.17-2.05-1.01-2.37-1.12s-.55-.17-.79.17-.92 1.12-1.13 1.35-.42.26-.77.09a9.7 9.7 0 0 1-2.85-1.76 10.7 10.7 0 0 1-1.97-2.45c-.2-.35-.02-.54.15-.71.16-.16.35-.42.52-.63a2.38 2.38 0 0 0 .35-.59c.09-.17.04-.32-.02-.45s-.79-1.9-1.08-2.6c-.28-.68-.57-.59-.79-.6h-.67a1.29 1.29 0 0 0-.93.43 3.91 3.91 0 0 0-1.22 2.91 6.8 6.8 0 0 0 1.42 3.61c.17.23 2.44 3.73 5.92 5.23 2.07.89 2.87.89 3.9.74a3.3 3.3 0 0 0 2.16-1.52 2.7 2.7 0 0 0 .19-1.52c-.08-.13-.26-.21-.61-.38z" fill="#FFFFFF"/>
     </svg>
   </a>
+
+  <!-- Mobile Navigation Toggle Script -->
+  <script>
+    const navToggle = document.getElementById('zhNavToggle');
+    const navMenu = document.getElementById('zhNavMenu');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
