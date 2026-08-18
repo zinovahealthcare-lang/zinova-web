@@ -3,25 +3,21 @@ media:
   output: /assets/uploads
 
 content:
-  - name: pages
-    label: Site Pages
-    type: collection
-    items:
-      - name: home
-        label: Home Page
-        type: file
-        path: index.html
-        fields:
-          - { name: hero_title, label: Hero Title, type: string }
-          - { name: hero_subtitle, label: Hero Subtitle, type: text }
+  - name: home
+    label: Home Page
+    type: file
+    path: index.html
+    fields:
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: hero_subtitle, label: Hero Subtitle, type: text }
 
-      - name: contact
-        label: Contact Page
-        type: file
-        path: contact.html
-        fields:
-          - { name: phone, label: Phone Number, type: string }
-          - { name: email, label: Email Address, type: string }
+  - name: contact
+    label: Contact Page
+    type: file
+    path: contact.html
+    fields:
+      - { name: phone, label: Phone Number, type: string }
+      - { name: email, label: Email Address, type: string }
 
   - name: products
     label: Products
