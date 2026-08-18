@@ -30,3 +30,13 @@ content:
       - { name: price, label: Price, type: string }
       - { name: image, label: Product Image, type: image }
       - { name: description, label: Description, type: rich-text }
+- name: products
+    label: Products
+    type: collection
+    path: content/products # Folder where product data files will be stored
+    format: json
+    fields:
+      - { name: title, label: Product Name, type: string }
+      - { name: price, label: Price, type: string }
+      - { name: image, label: Product Image, type: image }
+      - { name: description, label: Description, type: rich-text }
