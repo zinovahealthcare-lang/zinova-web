@@ -25,9 +25,9 @@ content:
 
   - name: products
     label: Products
-    type: collection
-    path: content/products
-    format: json
+    type: file
+    path: content/products.json
+    list: true
     fields:
       - { name: title, label: Product Name, type: string }
       - { name: price, label: Price, type: string }
