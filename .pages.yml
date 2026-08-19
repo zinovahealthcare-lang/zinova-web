@@ -3,15 +3,19 @@ media:
   output: /assets
 
 content:
-  - name: home_hero_image
+  - name: home_hero_banner
     label: Home Hero Banner
     type: file
     path: assets/hero-banner.jpg
+    fields:
+      - { name: image, label: Select or Upload Hero Image, type: image }
 
   - name: home_doctor_image
     label: Chairman / Doctor Image
     type: file
     path: assets/chairman.jpg
+    fields:
+      - { name: image, label: Select or Upload Doctor Image, type: image }
 
   - name: products
     label: Products
