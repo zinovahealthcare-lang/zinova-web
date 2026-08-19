@@ -6,14 +6,15 @@ content:
   - name: home_doctor_image
     label: Chairman / Doctor Image
     type: file
-    path: assets/chairman.jpg
+    path: content/chairman.json
     fields:
       - { name: image, label: Select or Upload Doctor Image, type: image }
 
   - name: products
     label: Products
     type: collection
-    path: products
+    path: content/products
+    format: json
     fields:
       - { name: title, label: Title, type: string }
       - { name: price, label: Price (PKR / USD), type: string }
