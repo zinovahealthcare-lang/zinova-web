@@ -140,40 +140,44 @@
       const grid = document.querySelector('.zh-products-grid');
 
       try {
-        const response = await fetch('/content/products.json');
+        // Fetch files directly from GitHub's repository contents API for the products folder
+        const response = await fetch('https://api.github.com/repos/zinovahealthcare-lang/zinova-web/contents/products');
         if (!response.ok) return;
 
-        const products = await response.json();
-        if (!Array.isArray(products) || products.length === 0) return;
+        const files = await response.json();
+        if (!Array.isArray(files) || files.length === 0) return;
 
-        grid.innerHTML = '';
+        for (const file of files) {
+          if (file.name.endsWith('.json')) {
+            const productRes = await fetch(file.download_url);
+            if (!productRes.ok) continue;
 
-        products.forEach(product => {
-          const card = document.createElement('div');
-          card.className = 'zh-product-card';
+            const product = await productRes.json();
+            const card = document.createElement('div');
+            card.className = 'zh-product-card';
 
-          const title = product.title || 'Pharmaceutical Product';
-          const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
-          const rawDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : '';
-          const priceDisplay = product.price ? `PKR ${product.price}` : 'Inquire for Price';
+            const title = product.title || 'Pharmaceutical Product';
+            const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
+            const rawDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : '';
+            const priceDisplay = product.price ? `PKR ${product.price}` : 'Inquire for Price';
 
-          card.innerHTML = `
-            <div class="zh-product-card__img">
-              <img src="${imgSrc}" alt="${title}">
-            </div>
-            <div class="zh-product-card__body">
-              <h4>${title}</h4>
-              <span class="zh-product-badge">Formulation</span>
-              ${rawDesc ? `<p class="zh-product-desc">${rawDesc}</p>` : ''}
-              <div class="zh-product-card__footer">
-                <span class="zh-product-price">${priceDisplay}</span>
-                <a href="contact.html" class="zh-product-btn">Inquire Now</a>
+            card.innerHTML = `
+              <div class="zh-product-card__img">
+                <img src="${imgSrc}" alt="${title}">
               </div>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-
+              <div class="zh-product-card__body" style="padding: 12px; text-align: left;">
+                <h4 style="margin: 0 0 6px 0;">${title}</h4>
+                <span class="zh-product-badge" style="font-size: 12px; color: #0b6cb1; background: #e0f2fe; padding: 2px 8px; border-radius: 4px;">Formulation</span>
+                ${rawDesc ? `<p class="zh-product-desc" style="font-size: 13px; color: #64748b; margin: 8px 0;">${rawDesc}</p>` : ''}
+                <div class="zh-product-card__footer" style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                  <span class="zh-product-price" style="font-weight: bold; color: #0f172a;">${priceDisplay}</span>
+                  <a href="contact.html" class="zh-product-btn" style="text-decoration: none; padding: 6px 12px; background: #0b6cb1; color: #fff; border-radius: 4px; font-size: 12px;">Inquire Now</a>
+                </div>
+              </div>
+            `;
+            grid.appendChild(card);
+          }
+        }
       } catch (err) {
         console.error('Error rendering dynamic products:', err);
       }
