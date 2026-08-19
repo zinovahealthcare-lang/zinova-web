@@ -16,5 +16,6 @@ content:
     path: products
     fields:
       - { name: title, label: Title, type: string }
+      - { name: price, label: Price (PKR / USD), type: string }
       - { name: image, label: Image, type: image }
       - { name: description, label: Description, type: text }
