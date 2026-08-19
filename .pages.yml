@@ -1,23 +1,23 @@
 media:
-  input: assets/uploads
-  output: /assets/uploads
+  input: assets
+  output: /assets
 
 content:
-      - name: contact
-        label: Contact Page
-        type: file
-        path: contact.html
-        fields:
-          - { name: phone, label: Phone Number, type: string }
-          - { name: email, label: Email Address, type: string }
+  - name: home_hero_image
+    label: Home Hero Banner
+    type: file
+    path: assets/hero-banner.jpg
+
+  - name: home_doctor_image
+    label: Chairman / Doctor Image
+    type: file
+    path: assets/chairman.jpg
 
   - name: products
     label: Products
-    type: file
-    path: content/products.json
-    list: true
+    type: collection
+    path: products
     fields:
-      - { name: title, label: Product Name, type: string }
-      - { name: price, label: Price, type: string }
-      - { name: image, label: Product Image, type: image }
-      - { name: description, label: Description, type: rich-text }
+      - { name: title, label: Title, type: string }
+      - { name: image, label: Image, type: image }
+      - { name: description, label: Description, type: text }
