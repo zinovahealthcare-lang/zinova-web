@@ -140,8 +140,7 @@
       const grid = document.querySelector('.zh-products-grid');
 
       try {
-        // Fetch files directly from GitHub's repository contents API for the products folder
-        const response = await fetch('https://api.github.com/repos/zinovahealthcare-lang/zinova-web/contents/products');
+        const response = await fetch('https://api.github.com/repos/zinovahealthcare-lang/zinova-web/contents/content/products');
         if (!response.ok) return;
 
         const files = await response.json();
@@ -157,7 +156,9 @@
             card.className = 'zh-product-card';
 
             const title = product.title || 'Pharmaceutical Product';
-            const imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
+            let imgSrc = product.image ? product.image : 'assets/zinova-mark.png';
+            if (imgSrc.startsWith('/')) imgSrc = imgSrc.slice(1);
+
             const rawDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : '';
             const priceDisplay = product.price ? `PKR ${product.price}` : 'Inquire for Price';
 
