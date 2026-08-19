@@ -112,7 +112,7 @@
           <div class="zh-executive-card">
             <div class="zh-executive-card__badge">Leadership</div>
             <div class="zh-executive-card__image">
-              <img src="assets/chairman.jpg" alt="Zinova Leadership" onerror="this.src='assets/chairman.png'">
+              <img id="zh-doctor-img" src="assets/zinova-mark.png" alt="Zinova Leadership">
             </div>
           </div>
 
@@ -206,6 +206,23 @@
         navMenu.classList.toggle('active');
       });
     }
+
+    // Dynamic Doctor Image Loader
+    async function loadDoctorImage() {
+      try {
+        const res = await fetch('content/chairman.json');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data && data.image) {
+          const imgEl = document.getElementById('zh-doctor-img');
+          // Strips leading slash if present for relative URL loading
+          imgEl.src = data.image.startsWith('/') ? data.image.slice(1) : data.image;
+        }
+      } catch (err) {
+        console.error('Error loading doctor image:', err);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadDoctorImage);
   </script>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
